@@ -1,36 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Todo app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+
 </head>
+
 <body>
+  <main class="app-container">
+    <div class="hero-container">
+      <h1 class="h-hero">Todo</h1>
+      <button class="btn-theme">
+        <img class="img-theme" src="./images/icon-moon.svg" alt="logo theme" width="20" height="20">
+      </button>
+    </div>
 
-  Todo
+    <picture class="picture">
+      <source media="(min-width: 1024px)" srcset="./images/bg-desktop-light.jpg">
+      <img src="./images/bg-mobile-light.jpg" width="375" height="auto" alt="background mobile light">
+    </picture>
 
-  <!-- Add dynamic number --> items left
+    <div class="div-todo-text">
+      <input type="text" name="todo-text" id="todo-text" placeholder="Create a new todo">
+    </div>
 
-  All
-  Active 
-  Completed
+    <ul class="todo-list" id="todo-list">
+      
+      <li class="todo">
+        <input type="checkbox" name="checkbox-todo" id="checkbox-todo" class="checkbox-todo">
+        <label for="checkbox-todo" class="label-todo"></label>
+        <label for="checkbox-todo" class="label-todo-text">my frist todo</label>
+        <img class="img-x" src="./images/icon-cross.svg" alt="icon cross" width="12" height="12">
+      </li>
 
-  Clear Completed
+      <li class="todo">
+        <input type="checkbox" name="checkbox-todo" id="checkbox-todo" class="checkbox-todo">
+        <label for="checkbox-todo" class="label-todo"></label>
+        <span class="label-todo-text">my frist todo</span>
+        <img class="img-x" src="./images/icon-cross.svg" alt="icon cross" width="12" height="12">
+      </li>
 
-  Drag and drop to reorder list
+      <li class="todo">
+        <input type="checkbox" name="checkbox-todo" id="checkbox-todo" class="checkbox-todo">
+        <label for="checkbox-todo" class="label-todo"></label>
+        <span class="label-todo-text">my frist todo</span>
+        <img class="img-x" src="./images/icon-cross.svg" alt="icon cross" width="12" height="12">
+      </li>
 
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </footer>
+      <li class="todo">
+        <input type="checkbox" name="checkbox-todo" id="checkbox-todo" class="checkbox-todo">
+        <label for="checkbox-todo" class="label-todo"></label>
+        <span class="label-todo-text">my frist todo</span>
+        <img class="img-x" src="./images/icon-cross.svg" alt="icon cross" width="12" height="12">
+      </li>
+
+      <li class="todo">
+        <input type="checkbox" name="checkbox-todo" id="checkbox-todo" class="checkbox-todo">
+        <label for="checkbox-todo" class="label-todo"></label>
+        <span class="label-todo-text">my frist todo</span>
+        <img class="img-x" src="./images/icon-cross.svg" alt="icon cross" width="12" height="12">
+      </li>
+
+
+    <!-- Add dynamic number -->
+    <div class="items-left">
+      <div class="items-left-number">
+        <span id="dynamic-number">0</span>
+        <span>items left</span>
+      </div>
+      <button class="btns" id="btn-clear-completed">Clear Completed</button>
+    </div>
+
+    <div class="btn-container">
+      <button class="btns" id="btn-all">All</button>
+      <button class="btns" id="btn-active">Active</button>
+      <button class="btns" id="btn-completed">Completed</button>
+    </div>
+
+    <p class="p-drag">Drag and drop to reorder list</p>
+
+  </main>
+
 </body>
+
 </html>

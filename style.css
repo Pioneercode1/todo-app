@@ -4,7 +4,7 @@
 
     /* Colors Primary */
     --blue-500: hsl(220, 98%, 61%);
-    --check-background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+    --check-background: hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
 
     /* Colors Neutral */
     /* Light Theme */
@@ -13,16 +13,6 @@
     --gray-300: hsl(233, 11%, 84%);
     --gray-600: hsl(236, 9%, 61%);
     --navy-850: hsl(235, 19%, 35%);
-
-    /* Dark Theme */
-    --navy-950: hsl(235, 21%, 11%);
-    --navy-900: hsl(235, 24%, 19%);
-    --purple-300: hsl(234, 39%, 85%);
-    --purple-100-hover: hsl(236, 33%, 92%);
-    --purple-600: hsl(235, 16%, 43%);
-    --purple-700: hsl(233, 14%, 35%);
-    --purple-800: hsl(237, 14%, 26%);
-    --gra-600: hsl(236, 9%, 61%);
 
     /* body copy */
     --font-size: 18px;
@@ -35,11 +25,26 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 
+/* Dark Theme 
+[mode-theme="dark"] {
+    --navy-950: hsl(235, 21%, 11%);
+    --navy-900: hsl(235, 24%, 19%);
+    --purple-300: hsl(234, 39%, 85%);
+    --purple-100-hover: hsl(236, 33%, 92%);
+    --purple-600: hsl(235, 16%, 43%);
+    --purple-700: hsl(233, 14%, 35%);
+    --purple-800: hsl(237, 14%, 26%);
+    --gray-600: hsl(236, 9%, 61%);
+    --logo-dark: url(./images/bg-mobile-dark.jpg);
+}
+*/
+
+
+
 html {
-    box-sizing: border-box;
     font-size: var(--font-size);
 }
 
@@ -48,5 +53,214 @@ body {
     font-optical-sizing: auto;
     font-weight: var(--font-weight);
     font-style: normal;
+    color: var(--gray-50);
+    display: grid;
+    place-items: center;
+    background-color: var(--gray-300);
 }
 
+.app-container {
+    width: 375px;
+    min-height: 100vh;
+    padding: 1.3rem;
+    margin-block: auto;
+    margin-inline: auto;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-block-start: 1.4rem;
+    margin-block-end: 1.9rem;
+}
+
+.hero-container .h-hero {
+    font-weight: var(--font-bold);
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    flex-grow: 1;
+}
+
+.hero-container .btn-theme {
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.picture {
+    position: absolute;
+    z-index: -99;
+    inset: 0 0 70% 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.picture img {
+    width: 100%;
+    height: auto;
+}
+
+.div-todo-text #todo-text {
+    padding: 1.1rem;
+    width: 100%;
+    margin-block-end: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+}
+
+.todo-list {
+    background-color: transparent;
+    font-size: .8rem;
+}
+
+.todo-list .todo {
+    padding: 1.2rem;
+    margin-block-end: 1rem;
+    color: var(--navy-850);
+    background-color: var(--gray-50);
+    display: flex;
+    align-items: center;
+    margin-block-end: 1px;
+    list-style: none;
+}
+
+.todo-list li:first-of-type {
+    border-start-start-radius: 8px;
+    border-start-end-radius: 8px;
+}
+
+.todo .label-todo-text {
+    flex-grow: 1;
+    margin-inline-start: .4rem;
+}
+
+.todo .label-todo-text:hover {
+    color: var(--navy-850);
+    cursor: pointer;
+}
+
+.todo .label-todo-text:focus {
+    color: var(--blue-500);
+}
+
+.todo .checkbox-todo {
+    display: none;
+}
+
+.todo .label-todo {
+    min-width: 18px;
+    min-height: 18px;
+    border: 1px solid var(--gray-600);
+    border-radius: 50%;
+    position: relative;
+}
+
+.todo .label-todo:hover {
+    color: var(--navy-850);
+    cursor: pointer;
+}
+
+.todo .label-todo:focus {
+    color: var(--blue-500);
+}
+
+.checkbox-todo:checked~.label-todo {
+    background: linear-gradient(to right, #57ddff, #c058f3);
+}
+
+.checkbox-todo:checked~.label-todo::after {
+    content: "";
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%);
+    background-image: url(./images/icon-check.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 12px;
+    height: 12px;
+}
+
+.todo .img-x {
+    width: 12px;
+    height: 12px;
+}
+
+.items-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 2.5rem;
+    padding-inline: 1.2rem;
+    padding-block: 1.6rem;
+    margin-block-end: 1rem;
+    background-color: var(--gray-50);
+    font-size: .8rem;
+    color: var(--gray-600);
+    border-end-start-radius: 8px;
+    border-end-end-radius: 8px;
+}
+
+.items-left #btn-clear-completed {
+    outline: none;
+    border: none;
+    font-size: .7rem;
+    color: var(--gray-600);
+    background-color: transparent;
+}
+
+.items-left :hover {
+    color: var(--navy-850);
+    cursor: pointer;
+}
+
+.items-left :focus {
+    color: var(--blue-500);
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1.5rem;
+    width: 100%;
+    height: 3rem;
+    margin-block-end: 3rem;
+    border-radius: 8px;
+    background-color: var(--gray-50);
+}
+
+.btn-container .btns {
+    outline: none;
+    border: none;
+    font-size: .9rem;
+    font-weight: var(--font-bold);
+    color: var(--gray-600);
+    background-color: transparent;
+    padding-block: 1rem;
+}
+
+.btn-container .btns:first-of-type {
+    color: var(--blue-500);
+}
+
+.btn-container .btns:hover {
+    color: var(--navy-850);
+    cursor: pointer;
+}
+
+.btn-container .btns:focus {
+    color: var(--blue-500);
+}
+
+.p-drag {
+    text-align: center;
+    color: var(--gray-600);
+    font-size: .9rem;
+}

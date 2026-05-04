@@ -1,69 +1,36 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- google font and icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-    <!-- icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Todo app</title>
 
-    <link rel="stylesheet" href="./style.css">
-    <script src="./main.js" defer></script>
-    <title>Task List</title>
-
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 0.6875rem; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
 </head>
-
 <body>
-    <div class="container">
-        <main class="content-main">
-            <header class="content-header">
-                <h1>قائمة المهام</h1>
-                <button id="button-add" class="style-buttons" type="button" title="قائمة" aria-label="قائمة">
-                    <span class="material-symbols-outlined">
-                        add_notes
-                    </span>
-                </button>
-            </header>
 
-            <section class="container-tasks">
+  Todo
 
-                <div class="content-tasks">
-                    <div class="one-task">
-                        <div class="title-task">
-                            <h2>اسم المهمة</h2>
-                            <span>تاريخ الاضافة</span>
-                        </div>
+  <!-- Add dynamic number --> items left
 
-                        <div class="buttons-task">
-                            <button id="button-done" class="style-buttons button-done" type="button">
-                                <span class="material-symbols-outlined">
-                                    check_circle
-                                </span>
-                            </button>
-                            <button id="button-edit" class="style-buttons button-edit" type="button">
-                                <span class="material-symbols-outlined">
-                                    edit_note
-                                </span>
-                            </button>
-                            <button id="button-delete" class="style-buttons button-delete" type="button">
-                                <span class="material-symbols-outlined">
-                                    delete
-                                </span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+  All
+  Active 
+  Completed
 
-            </section>
+  Clear Completed
 
-        </main>
-    </div>
+  Drag and drop to reorder list
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </footer>
 </body>
-
 </html>

@@ -1,122 +1,52 @@
-:root {
-    /*colors*/
-    --light-black: #2a2c34;
-    --light-gy: #616165e2;
-    --white: #fff;
-    --light-red: #cf3c3c;
-    --green: #226b22;
-    --blue: #4035bd;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
+:root {
+
+    /* Colors Primary */
+    --blue-500: hsl(220, 98%, 61%);
+    --check-background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+
+    /* Colors Neutral */
+    /* Light Theme */
+    --gray-50: hsl(0, 0%, 98%);
+    --purple-300: hsl(234, 39%, 85%);
+    --gray-300: hsl(233, 11%, 84%);
+    --gray-600: hsl(236, 9%, 61%);
+    --navy-850: hsl(235, 19%, 35%);
+
+    /* Dark Theme */
+    --navy-950: hsl(235, 21%, 11%);
+    --navy-900: hsl(235, 24%, 19%);
+    --purple-300: hsl(234, 39%, 85%);
+    --purple-100-hover: hsl(236, 33%, 92%);
+    --purple-600: hsl(235, 16%, 43%);
+    --purple-700: hsl(233, 14%, 35%);
+    --purple-800: hsl(237, 14%, 26%);
+    --gra-600: hsl(236, 9%, 61%);
+
+    /* body copy */
+    --font-size: 18px;
+
+    /* Fonts */
+    --font-weight: 400;
+    --font-bold: 700;
 }
 
-/**/
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    box-sizing: inherit;
 }
 
-.material-symbols-outlined {
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 0,
-        'GRAD' 0,
-        'opsz' 24
+html {
+    box-sizing: border-box;
+    font-size: var(--font-size);
 }
 
 body {
-    min-height: 100vh;
-    min-width: 100vw;
-    color: var(--white);
-    background-color: var(--light-black);
-    display: grid;
-    place-items: center;
-    font-family: "Tajawal", sans-serif;
-    font-weight: 400;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: var(--font-weight);
     font-style: normal;
 }
 
-.container {
-    display: grid;
-    place-items: center;
-    width: 100%;
-    min-height: 100%;
-}
-
-.content-main {
-    width: clamp(320px, 50%, 33rem);
-    min-height: 500px;
-    font-size: clamp(14px, 0.9rem + 1.5vw, 1.2rem);
-    background-color: var(--light-gy);
-    display: flex;
-    flex-direction: column;
-    justify-content: stretch;
-    align-items: stretch;
-    gap: 1rem;
-    padding: 0.5rem;
-    border-radius: 12px;
-    box-shadow: 6px 6px 8px rgba(255, 255, 255, 0.3);
-}
-
-.content-header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 1rem;
-}
-
-.style-buttons {
-    border-radius: 50%;
-    border: none;
-    width: 32px;
-    height: 32px;
-    line-height: 0;
-    color: var(--white);
-}
-
-.content-header h1 {
-    font-size: clamp(18px, 1.1rem + 2vw, 2rem);
-}
-#button-add {
-    background-color: var(--light-gy);
-}
-
-.content-tasks {
-    width: 100%;
-    margin-block-end: 0.5rem;
-}
-
-.one-task {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem;
-    background-color: var(--white);
-    color: var(--light-black);
-    border-radius: 8px;
-}
-
-.one-task h2 {
-    font-size: clamp(16px, 0.9rem + 1.5vw, 1.7rem);
-}
-.button-done {
-    background-color: var(--green);
-}
-.button-edit {
-    background-color: var(--blue);
-}
-.button-delete {
-    background-color: var(--light-red);
-}
-
-.done {
-    background-color: var(--green);
-}
-
-@media (min-width: 1024px) {
-    .content-main {
-        width: clamp(500px, 60%, 48rem);
-        height: 500px;
-        font-size: clamp(18px, 1rem + 1.5vw, 1.4rem);
-    }
-}

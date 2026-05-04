@@ -40,7 +40,19 @@
     --gray-600: hsl(236, 9%, 61%);
     --logo-dark: url(./images/bg-mobile-dark.jpg);
 }
-*/
+
+/* Dark Theme */
+[mode-theme="dark"] {
+    --gray-300: hsl(235, 21%, 11%);
+    --navy-900: hsl(235, 24%, 19%);
+    --purple-300: hsl(234, 39%, 85%);
+    --purple-100-hover: hsl(236, 33%, 92%);
+    --purple-600: hsl(235, 16%, 43%);
+    --purple-700: hsl(233, 14%, 35%);
+    --purple-800: hsl(237, 14%, 26%);
+    --gray-600: hsl(236, 9%, 61%);
+    --logo-dark: url(./images/bg-mobile-dark.jpg);
+}
 
 
 
@@ -71,14 +83,14 @@ body {
     display: flex;
     align-items: center;
     width: 100%;
-    margin-block-start: 1.4rem;
-    margin-block-end: 1.9rem;
+    margin-block-start: 1.8rem;
+    margin-block-end: 2.3rem;
 }
 
 .hero-container .h-hero {
     font-weight: var(--font-bold);
-    font-size: 1.5rem;
-    letter-spacing: 3px;
+    font-size: 1.8rem;
+    letter-spacing: 5px;
     flex-grow: 1;
 }
 
@@ -92,7 +104,7 @@ body {
 .picture {
     position: absolute;
     z-index: -99;
-    inset: 0 0 70% 0;
+    inset: 0 0 75% 0;
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -100,11 +112,11 @@ body {
 
 .picture img {
     width: 100%;
-    height: auto;
+    height: 27.5%;
 }
 
 .div-todo-text #todo-text {
-    padding: 1.1rem;
+    padding: 1.2rem;
     width: 100%;
     margin-block-end: 1rem;
     outline: none;
@@ -118,7 +130,7 @@ body {
 }
 
 .todo-list .todo {
-    padding: 1.2rem;
+    padding: 1.3rem;
     margin-block-end: 1rem;
     color: var(--navy-850);
     background-color: var(--gray-50);
@@ -261,6 +273,6 @@ body {
 
 .p-drag {
     text-align: center;
-    color: var(--gray-600);
+    color: var(--gray-600) !important;
     font-size: .9rem;
 }

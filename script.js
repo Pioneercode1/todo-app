@@ -3,8 +3,6 @@ const themeImg = document.querySelector('.img-theme');
 const sourceDesktop = document.querySelector('.picture source');
 const imgMobile = document.querySelector('.picture img');
 
-
-
 function setDarkTheme() {
     document.documentElement.setAttribute('mode-theme', 'dark');
     themeImg.src = './images/icon-sun.svg';

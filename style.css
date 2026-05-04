@@ -80,8 +80,8 @@ body {
 
 .hero-container .h-hero {
     font-weight: var(--font-bold);
-    font-size: 1.8rem;
-    letter-spacing: 5px;
+    font-size: 1.7rem;
+    letter-spacing: 5.7px;
     flex-grow: 1;
     color: var(--white);
     text-transform: uppercase;
@@ -178,6 +178,11 @@ body {
     background: linear-gradient(to right, #57ddff, #c058f3);
 }
 
+.checkbox-todo:checked~ .label-todo-text {
+    text-decoration: line-through;
+    color: var(--gray-600);
+}
+
 .checkbox-todo:checked~.label-todo::after {
     content: "";
     position: absolute;
@@ -195,6 +200,13 @@ body {
 .todo .img-x {
     width: 12px;
     height: 12px;
+}
+
+.todo .img-x:hover {
+    cursor: pointer;
+}
+.todo .img-x:focus {
+    cursor: pointer;
 }
 
 .items-left {
@@ -222,7 +234,7 @@ body {
 }
 
 .items-left :hover {
-    color: var(--navy-850);
+    color: var(--navy-850) !important;
     cursor: pointer;
 }
 

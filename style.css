@@ -8,6 +8,7 @@
 
     /* Colors Neutral */
     /* Light Theme */
+    --white: #fff;
     --gray-50: hsl(0, 0%, 98%);
     --purple-300: hsl(234, 39%, 85%);
     --gray-300: hsl(233, 11%, 84%);
@@ -28,33 +29,23 @@
     box-sizing: border-box;
 }
 
-/* Dark Theme 
-[mode-theme="dark"] {
-    --navy-950: hsl(235, 21%, 11%);
-    --navy-900: hsl(235, 24%, 19%);
-    --purple-300: hsl(234, 39%, 85%);
-    --purple-100-hover: hsl(236, 33%, 92%);
-    --purple-600: hsl(235, 16%, 43%);
-    --purple-700: hsl(233, 14%, 35%);
-    --purple-800: hsl(237, 14%, 26%);
-    --gray-600: hsl(236, 9%, 61%);
-    --logo-dark: url(./images/bg-mobile-dark.jpg);
-}
-
 /* Dark Theme */
 [mode-theme="dark"] {
+    --gray-50: hsl(235, 24%, 19%);
+    /* Container background */
     --gray-300: hsl(235, 21%, 11%);
+    /* Body background */
+    --gray-600: hsl(235, 16%, 43%);
+    /* Secondary text */
+    --navy-850: hsl(234, 39%, 85%);
+    /* Primary text */
     --navy-900: hsl(235, 24%, 19%);
     --purple-300: hsl(234, 39%, 85%);
     --purple-100-hover: hsl(236, 33%, 92%);
     --purple-600: hsl(235, 16%, 43%);
     --purple-700: hsl(233, 14%, 35%);
     --purple-800: hsl(237, 14%, 26%);
-    --gray-600: hsl(236, 9%, 61%);
-    --logo-dark: url(./images/bg-mobile-dark.jpg);
 }
-
-
 
 html {
     font-size: var(--font-size);
@@ -92,6 +83,8 @@ body {
     font-size: 1.8rem;
     letter-spacing: 5px;
     flex-grow: 1;
+    color: var(--white);
+    text-transform: uppercase;
 }
 
 .hero-container .btn-theme {
@@ -122,6 +115,7 @@ body {
     outline: none;
     border: none;
     border-radius: 8px;
+    background-color: var(--gray-50);
 }
 
 .todo-list {

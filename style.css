@@ -178,7 +178,7 @@ body {
     background: linear-gradient(to right, #57ddff, #c058f3);
 }
 
-.checkbox-todo:checked~ .label-todo-text {
+.checkbox-todo:checked~.label-todo-text {
     text-decoration: line-through;
     color: var(--gray-600);
 }
@@ -205,6 +205,7 @@ body {
 .todo .img-x:hover {
     cursor: pointer;
 }
+
 .todo .img-x:focus {
     cursor: pointer;
 }
@@ -281,4 +282,37 @@ body {
     text-align: center;
     color: var(--gray-600) !important;
     font-size: .9rem;
+}
+
+
+@media (min-width: 768px) {
+    .app-container {
+        width: 450px;
+    }
+
+    .div-todo-text #todo-text,
+    .todo-list {
+        font-size: .9rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .app-container {
+        width: 768px;
+    }
+
+    .div-todo-text #todo-text,
+    .todo-list {
+        font-size: 1rem;
+    }
+
+
+    .items-left {
+        font-size: .9rem;
+    }
+
+    .items-left #btn-clear-completed {
+        font-size: .8rem;
+    }
+
 }

@@ -296,16 +296,29 @@ body {
     }
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 90rem) {
+
     .app-container {
-        width: 768px;
+        width: 48rem;
+        margin: 0 auto;
     }
 
     .div-todo-text #todo-text,
     .todo-list {
         font-size: 1rem;
     }
+    
+    .list-footer-wrapper {
+        position: relative;
+        margin-block-end: 3rem;
+    }
 
+    .btn-container {
+        position: absolute;
+        top: 1%;
+        left: 30%;
+        width: 35%;
+    }
 
     .items-left {
         font-size: .9rem;

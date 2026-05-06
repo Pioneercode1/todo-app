@@ -132,6 +132,16 @@ body {
     align-items: center;
     margin-block-end: 1px;
     list-style: none;
+    cursor: grab;
+}
+
+.todo.dragging {
+    opacity: 0.5;
+    border: 2px dashed var(--blue-500);
+}
+
+.todo:active {
+    cursor: grabbing;
 }
 
 .todo-list li:first-of-type {

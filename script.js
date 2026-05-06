@@ -173,6 +173,7 @@ function setDarkTheme() {
     sourceDesktop.srcset = './images/bg-desktop-dark.jpg';
     imgMobile.src = './images/bg-mobile-dark.jpg';
     localStorage.setItem("mode-theme", "dark");
+    todoText.style.color = "var(--navy-850)";
 }
 
 function setLightTheme() {

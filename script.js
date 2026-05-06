@@ -23,7 +23,8 @@ function addTask(newText) {
             isCompleted: false,
         };
 
-        allTask.push(task)
+        allTask.push(task);
+        saveToLocalStorage();
         createTask(task);
         updateCounter();
         todoText.value = "";
@@ -47,6 +48,7 @@ function createTask(task) {
     checkbox.checked = task.isCompleted;
     checkbox.addEventListener("change", () => {
         task.isCompleted = checkbox.checked;
+        saveToLocalStorage();
         updateCounter();
     });
     /* */
@@ -63,6 +65,7 @@ function createTask(task) {
     deleteImg.addEventListener("click", () => {
         newtask.remove();
         allTask = allTask.filter(t => t.id !== task.id);
+        saveToLocalStorage();
         updateCounter();
     });
 
@@ -93,12 +96,18 @@ function createTask(task) {
     /* */
     todoList.append(newtask);
 
-    btnClear.addEventListener("click", () => {
-        allTask = allTask.filter(t => t.isCompleted === false);
-        statusCheck("all");
-        updateCounter();
-    });
 }
+
+btnAll.addEventListener("click", () => statusCheck("all"));
+btnActive.addEventListener("click", () => statusCheck("active"));
+btnCompleted.addEventListener("click", () => statusCheck("completed"));
+
+btnClear.addEventListener("click", () => {
+    allTask = allTask.filter(t => t.isCompleted === false);
+    statusCheck("all");
+    saveToLocalStorage();
+    updateCounter();
+});
 
 function reorderTasks(draggedId, targetId) {
     // 1. العثور على مكان العنصرين في المصفوفة
@@ -109,6 +118,7 @@ function reorderTasks(draggedId, targetId) {
     // 3. وضعه في مكانه الجديد
     allTask.splice(targetIndex, 0, draggedItem);
     // 4. إعادة رسم القائمة بالترتيب الجديد
+    saveToLocalStorage();
     statusCheck("all");
 }
 
@@ -138,15 +148,23 @@ function displayTasks(tasksArray) {
     });
 }
 
-btnAll.addEventListener("click", () => {
-    statusCheck("all");
-});
-btnActive.addEventListener("click", () => {
-    statusCheck("active");
-});
-btnCompleted.addEventListener("click", () => {
-    statusCheck("completed");
-});
+/* local storage */
+function saveToLocalStorage() {
+    localStorage.setItem("myTodoTasks", JSON.stringify(allTask));
+    localStorage.setItem("taskIdCounter", taskIdCounter.toString());
+}
+
+function loadFromLocalStorage() {
+    const savedTasks = localStorage.getItem("myTodoTasks");
+    const savedCounter = localStorage.getItem("taskIdCounter");
+    if (savedTasks) {
+        allTask = JSON.parse(savedTasks);
+        taskIdCounter = parseInt(savedCounter) || 0;
+        statusCheck("all");
+        updateCounter();
+    }
+}
+loadFromLocalStorage();
 
 /* theme */
 function setDarkTheme() {

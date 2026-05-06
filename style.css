@@ -297,7 +297,7 @@ body {
 
 @media (min-width: 768px) {
     .app-container {
-        width: 450px;
+        width: 400px;
     }
 
     .div-todo-text #todo-text,
@@ -309,15 +309,28 @@ body {
 @media (min-width: 90rem) {
 
     .app-container {
-        width: 48rem;
+        width: 32rem;
         margin: 0 auto;
     }
+
+    .hero-container {
+        margin-block-start: 2.4rem;
+    }
+
+    .picture {
+        inset: 0 0 65% 0;
+    }
+
+    .picture img {
+        height: 32%;
+    }
+
 
     .div-todo-text #todo-text,
     .todo-list {
         font-size: 1rem;
     }
-    
+
     .list-footer-wrapper {
         position: relative;
         margin-block-end: 3rem;

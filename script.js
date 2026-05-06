@@ -32,7 +32,8 @@ function addTask(newText) {
 }
 
 function updateCounter() {
-    dynamicNumber.innerText = allTask.length;
+    const activeTasks = allTask.filter(task => task.isCompleted === false);
+    dynamicNumber.innerText = activeTasks.length;
 }
 
 function createTask(task) {

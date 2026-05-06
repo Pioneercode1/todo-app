@@ -13,6 +13,16 @@ const todoList = document.getElementById("todo-list");
 const todoText = document.getElementById("todo-text");
 const dynamicNumber = document.getElementById("dynamic-number");
 
+/* */
+const initialTasks = [
+    { text: "Complete online JavaScript course", completed: true },
+    { text: "Jog around the park 3x", completed: false },
+    { text: "10 minutes meditation", completed: false },
+    { text: "Read for 1 hour", completed: false },
+    { text: "Pick up groceries", completed: false },
+    { text: "Complete Todo App on Frontend Mentor", completed: false }
+];
+
 let allTask = [];
 let taskIdCounter = 0;
 function addTask(newText) {
@@ -158,12 +168,23 @@ function saveToLocalStorage() {
 function loadFromLocalStorage() {
     const savedTasks = localStorage.getItem("myTodoTasks");
     const savedCounter = localStorage.getItem("taskIdCounter");
-    if (savedTasks) {
+
+    if (savedTasks && JSON.parse(savedTasks).length > 0) {
         allTask = JSON.parse(savedTasks);
         taskIdCounter = parseInt(savedCounter) || 0;
-        statusCheck("all");
-        updateCounter();
+    } else {
+        initialTasks.forEach(taskObj => {
+            allTask.push({
+                id: ++taskIdCounter,
+                newText: taskObj.text,
+                isCompleted: taskObj.completed
+            });
+        });
+        saveToLocalStorage();
     }
+    
+    statusCheck("all");
+    updateCounter();
 }
 loadFromLocalStorage();
 

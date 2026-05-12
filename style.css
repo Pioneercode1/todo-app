@@ -14,6 +14,7 @@
     --gray-300: hsl(233, 11%, 84%);
     --gray-600: hsl(236, 9%, 61%);
     --navy-850: hsl(235, 19%, 35%);
+    --olivedrab: hsl(80, 60%, 50%);
 
     /* body copy */
     --font-size: 18px;
@@ -130,7 +131,8 @@ body {
 
 .div-todo-text .btn-add-todo:hover {
     cursor: pointer;
-    background-color: olivedrab;
+    background-color: var(--olivedrab);
+    fill: var(--white);
     transform: translate(-50%, -50%) scale(1.1);
 }
 
@@ -355,6 +357,10 @@ body {
         height: 32%;
     }
 
+    .div-todo-text .btn-add-todo {
+    width: 28px;
+    height: 28px;
+}
 
     .div-todo-text #todo-text,
     .todo-list {

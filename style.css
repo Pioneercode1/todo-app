@@ -108,9 +108,39 @@ body {
     height: 27.5%;
 }
 
-.div-todo-text #todo-text {
-    padding: 1.2rem;
+.div-todo-text {
+    position: relative;
     width: 100%;
+    max-height: fit-content;
+    background-color: var(--gray-50);
+    margin-block-end: .7rem;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.div-todo-text .btn-add-todo {
+    position: absolute;
+    top: 50%;
+    left: 6%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.div-todo-text .btn-add-todo:hover {
+    cursor: pointer;
+    background-color: olivedrab;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.div-todo-text #todo-text {
+    position: absolute;
+    top: 50%;
+    left: 11%;
+    transform: translateY(-50%);
+    width: 85%;
+    padding: .5rem;
     margin-block-end: 1rem;
     outline: none;
     border: none;

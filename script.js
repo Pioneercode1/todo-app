@@ -8,6 +8,7 @@ const btnAll = document.getElementById("btn-all");
 const btnActive = document.getElementById("btn-active");
 const btnCompleted = document.getElementById("btn-completed");
 const btnClear = document.getElementById("btn-clear-completed");
+const btnAddTodo = document.querySelector(".btn-add-todo");
 /* */
 const todoList = document.getElementById("todo-list");
 const todoText = document.getElementById("todo-text");
@@ -138,6 +139,10 @@ todoText.addEventListener("keydown", (e) => {
         addTask(todoText.value.trim());
     }
 
+});
+
+btnAddTodo.addEventListener("click", () => {
+    addTask(todoText.value.trim());
 });
 
 function statusCheck(type) {
